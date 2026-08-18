@@ -1,0 +1,28 @@
+:root { --verde: #176b5a; --verde-escuro: #104b40; --fundo: #f4f7f6; }
+html { font-size: 16px; min-height: 100%; }
+body { min-height: 100vh; background: var(--fundo); color: #1f2933; }
+.navbar { background: #fff !important; }
+.navbar-brand { color: var(--verde) !important; font-weight: 700; }
+.estoque-header { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin: 2rem 0; }
+.eyebrow { margin-bottom: .25rem; color: var(--verde); font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.estoque-header h1 { margin: 0; font-weight: 700; }
+.subtitle { margin: .35rem 0 0; color: #64748b; }
+.stock-summary { min-width: 150px; padding: .8rem 1rem; border-radius: .75rem; background: #dcf4ea; color: var(--verde-escuro); text-align: right; }
+.stock-summary span { display: block; font-size: .78rem; }
+.stock-summary strong { font-size: 1.6rem; }
+.estoque-card { border: 0; border-radius: .85rem; box-shadow: 0 4px 18px rgb(15 23 42 / 7%); }
+.form-control:focus { border-color: #4fae9b; box-shadow: 0 0 0 .2rem rgb(23 107 90 / 14%); }
+.btn-primary { border-color: var(--verde); background: var(--verde); }
+.btn-primary:hover, .btn-primary:focus { border-color: var(--verde-escuro); background: var(--verde-escuro); }
+.btn-outline-primary { border-color: var(--verde); color: var(--verde); }
+.btn-outline-primary:hover { background: var(--verde); }
+.table-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+thead th { padding: .8rem 1.5rem !important; border-bottom-width: 1px !important; color: #64748b !important; font-size: .73rem; letter-spacing: .06em; text-transform: uppercase; }
+tbody td { padding: 1rem 1.5rem !important; }
+.product-name { display: block; font-weight: 600; }
+.quantity-badge { display: inline-block; padding: .2rem .55rem; border-radius: 999px; background: #e7f5ef; color: var(--verde-escuro); font-size: .85rem; font-weight: 700; }
+.empty-state { margin: 0; padding: 3rem 1rem; color: #64748b; text-align: center; }
+.tabela-lotes { background: #f8fbfa; }
+.tabela-lotes th { padding-left: 2.5rem !important; }
+.tabela-lotes td { padding-left: 2.5rem !important; }
+@media (max-width: 575px) { .estoque-header, .table-heading { align-items: flex-start; flex-direction: column; } .stock-summary { text-align: left; } }

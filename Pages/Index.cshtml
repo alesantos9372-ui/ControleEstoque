@@ -1,0 +1,75 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Produtos";
+}
+
+<section class="estoque-header">
+    <div>
+        <p class="eyebrow">Controle de estoque</p>
+        <h1>Produtos e lotes</h1>
+        <p class="subtitle">O total do produto é a soma de todos os seus lotes.</p>
+    </div>
+    <div class="stock-summary" aria-label="Resumo do estoque">
+        <span>Produtos cadastrados</span>
+        <strong id="total-produtos">0</strong>
+    </div>
+</section>
+
+<div id="mensagem" class="alert d-none" role="alert"></div>
+
+<div class="row g-4">
+    <div class="col-lg-4">
+        <section class="card estoque-card">
+            <div class="card-body p-4">
+                <h2 class="h4 mb-1">Adicionar lote</h2>
+                <p class="text-secondary mb-4">Se o produto já existir, este lote será agrupado a ele.</p>
+
+                <form id="produto-form">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Produto</label>
+                        <input id="nome" class="form-control" maxlength="100" required autocomplete="off" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="quantidade" class="form-label">Quantidade deste lote</label>
+                        <input id="quantidade" class="form-control" type="number" min="1" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="lote" class="form-label">Lote</label>
+                        <input id="lote" class="form-control" maxlength="60" required autocomplete="off" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="validade" class="form-label">Validade</label>
+                        <input id="validade" class="form-control" type="date" required />
+                    </div>
+                    <button id="salvar" class="btn btn-primary w-100" type="submit">Adicionar lote</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-lg-8">
+        <section class="card estoque-card h-100">
+            <div class="card-body p-0">
+                <div class="table-heading p-4 pb-3">
+                    <div>
+                        <h2 class="h4 mb-1">Estoque atual</h2>
+                        <p class="text-secondary mb-0">Expanda um produto para consultar os lotes disponíveis.</p>
+                    </div>
+                    <button id="atualizar-lista" class="btn btn-outline-primary btn-sm" type="button">Atualizar</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th>Produto</th><th>Total</th><th>Lotes</th><th class="text-end">Consulta</th>
+                            </tr>
+                        </thead>
+                        <tbody id="produtos-lista"></tbody>
+                    </table>
+                </div>
+                <p id="lista-vazia" class="empty-state d-none">Nenhum produto cadastrado.</p>
+            </div>
+        </section>
+    </div>
+</div>
